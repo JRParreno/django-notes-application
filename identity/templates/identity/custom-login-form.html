@@ -1,0 +1,39 @@
+{% extends 'identity/non-auth-base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="row mt-5">
+    <div class="col">
+        <p>Custom view with forms</p>
+        <form action="{% url 'identity:custom-login-form' %}" method="POST">
+            {% csrf_token %}
+            <!-- <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" required>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+            </div> -->
+            {{ form|crispy }}
+            {% if error_message %}
+            <div class="mb-3">
+                <p class="text-danger">
+                    {{ error_message }}
+                </p>
+            </div>
+            {% endif %}
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <a class="btn btn-primary" href="{% url 'identity:custom-login' %}">Click here login view without forms</a>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+<p>{{ name }} - {{ address }}</p>
+
+{% for fruit in fruits %}
+    <p>{{ forloop.counter }}. {{ fruit }}</p>
+{% endfor %}
+{% endblock content %}

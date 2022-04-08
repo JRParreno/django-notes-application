@@ -1,0 +1,15 @@
+{% extends 'dashboard/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col">
+        <form action="{% url 'note:add-note' %}" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

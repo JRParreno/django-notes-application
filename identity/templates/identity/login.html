@@ -1,0 +1,17 @@
+{% extends 'identity/non-auth-base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row mt-5">
+    <div class="col">
+        <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+        <a class="btn btn-primary mt-3" href="{% url 'identity:custom-login' %}">
+            click here to custom login
+        </a>
+
+    </div>
+</div>
+{% endblock content %}
