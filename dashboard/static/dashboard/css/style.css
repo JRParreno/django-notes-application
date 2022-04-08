@@ -1,0 +1,5 @@
+.background {
+    height: 300px;
+    widht: 300px;
+    background-image: url('/static/dashboard/images/bg.png');
+}
