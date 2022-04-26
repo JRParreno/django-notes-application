@@ -6,6 +6,12 @@ name = "pypi"
 [packages]
 django-crispy-forms = "*"
 django = "==3.1.0"
+gunicorn = "*"
+install = "*"
+django-heroku = "==0.0.0"
+psycopg-binary = "*"
+psycopg2-binary = "*"
+whitenoise = "*"
 
 [dev-packages]
 
